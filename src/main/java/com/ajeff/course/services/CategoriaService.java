@@ -1,5 +1,6 @@
 package com.ajeff.course.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +18,9 @@ public class CategoriaService {
 	public Categoria buscar(Long id) {
 		Optional<Categoria> cat = repository.findById(id);
 		return cat.orElse(null);
+	}
+	
+	public List<Categoria> lista(){
+		return repository.findAll();
 	}
 }
